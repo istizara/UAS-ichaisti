@@ -67,7 +67,50 @@ int main (){
                         getch();
                         system("cls");
                 }
-
+                break;
+                
+             case (3);
+                printf("1. Daftar Buku\n");
+                printf("2. Pinjam Buku\n");
+                scanf ("%d", &o);
+                system("cls");
+                
+                switch (0){
+                    case 1:
+                        list (jumlah_buku, i);
+                        printf("\nTekan apapun untuk melanjutkan...");
+                        o = 0;
+                        getch();
+                        system("cls");
+                    case 2:
+                        printf ("Masukan Nomor buku yang ingin dipinjam : ");
+                        scanf ("%d", &p);
+                        pinjam (&jumlah_buku[p-1], p, temp, i);
+                        temp[p-1] = jumlah_buku[p-1];
+                        printf ("\nTekan apapun untuk melanjutkan..."):
+                        getch();
+                        system("cls");
+                        break;
+                }
+                break;
+                
+             case (4);
+                    printf ("Masukan Nomor buku yang ingin dikembalikan : ");
+                    scanf ("%d", &p);
+                    kembali (&jumlah_buku[p-1], p, temp, i);
+                    temp[p-1] = jumlah_buku[p-1];
+                    printf (\nTekan apapun untuk melanjutkan...");
+                    getch();
+                    system("cls");
+                    break;
+                            
+              case (5);
+                   printf("Anda keluar dari program");
+                   break;
+                            
+              default:
+                  printf("Input salah, silahkan dimasukan kembali");
+                    
         ]
     }
 }
