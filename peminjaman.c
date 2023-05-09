@@ -14,3 +14,16 @@ void pinjam (Data *nama, int p, Data *temp, int i){
     }
     
 }
+void kembali (Data *nama, int p, Data *temp, int i ) {
+    if (i-p < 0){
+        printf ("\n Nomor Buku Todak Valid!");
+    }
+    else if((temp+p-1) -> status == 1 ){
+        printf ("\n Buku Masih Tersedia");
+    }
+    else {
+        printf ("\n Buku %s Telah dikembalikan", (temp+p-1)-> judul);
+        nama -> status = 1;
+    }
+}
+                
