@@ -71,4 +71,84 @@ int main (){
                         system("cls");
                 }
                 break;
+            
+            case (3):
+                printf("1. Daftar Buku\n");
+                printf("2. Pinjam Buku\n");
+                scanf ("%d", &o);
+                system("cls");             
+
+                switch (o){
+                    case 1:
+                        list (jumlah_buku, i);
+                        printf ("\nTekan apapun untuk melanjutkan...");
+                        o = 0;
+                        getch();
+                        system("cls");    
+                    case 2:
+                        printf ("Masukan Nomor buku yang ingin dipinjam : ");
+                        scanf ("%d", &p);
+                        pinjam (&jumlah_buku[p-1], p, temp, i);
+                        temp[p-1] = jumlah_buku[p-1];
+                        printf ("\nTekan apapun untuk melanjutkan...");
+                        getch();
+                        system("cls");
+                        break;
+                }
+                break;       
+
+            case (4):
+                    printf ("Masukan Nomor buku yang ingin dikembalikan : ");
+                    scanf ("%d", &p);
+                    kembali (&jumlah_buku[p-1], p, temp, i);
+                    temp[p-1] = jumlah_buku[p-1];
+                    printf ("\nTekan apapun untuk melanjutkan...");
+                    getch();
+                    system("cls");
+                    break;
+
+            case (5):
+                printf("Anda keluar dari program");
+                break;
+            
+            default:
+                printf("Input salah, silahkan dimasukan kembali!");
+                
+        }
+    }
+}
+
+void input (Data *nama, int *i){
+    printf ("Judul Buku : ");
+    scanf (" %[^\n]", nama->judul);
+    printf ("Nama Pengarang : ");
+    scanf (" %[^\n]", nama->pengarang);
+    printf ("Tahun Terbit : ");
+    scanf ("%d", &nama->tahun_terbit);
+    printf ("Penerbit : ");
+    scanf (" %[^\n]", nama->penerbit);
+    nama->status =  1;
+    (*i)++;
+}
+
+void list (Data *nama, int i){
+    int y;
+    if (i == 0){
+        printf ("Belum ada buku yang diinputkan\n");
+        return;
+    }
+
+    printf ("\tDaftar Buku\n\n");
+    for (y = 0; y < i; y++){
+        printf("No Buku = %d", y+1);
+        printf ("\nJudul Buku : %s", (nama+y)->judul);
+        printf ("\nNama Pengarang : %s", nama[y].pengarang);
+        printf ("\nTahun Terbit : %d", nama[y].tahun_terbit);
+        printf ("\nPenerbit : %s", nama[y].penerbit);
+        if (nama[y].status == 1) printf ("\nStatus = 'Tersedia'");
+        else printf ("\nStatus = 'Dipinjamkan'");
+        printf ("\n\n");
+    }   
+
+}
                 
