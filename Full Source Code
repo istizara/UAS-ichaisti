@@ -5,7 +5,7 @@
 #include <conio.h>
 #include <ctype.h>
 
-//struct dengan nama Data
+//menggunakan struct untuk mengimplementasikan sebuah variabel dengan sebuah struktur dengan nama Data
 typedef struct {
     char judul[50];
     char pengarang[50];
