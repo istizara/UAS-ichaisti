@@ -88,8 +88,9 @@ int main (){
                 printf("1. Daftar Buku\n");
                 printf("2. Pinjam Buku\n");
                 scanf ("%d", &o);
-                system("cls");             
-
+                system("cls");
+                
+                //switch digunakan untuk memilih alur program yang digunakan
                 switch (o){
                 //case (1) berfungsi untuk melihat list atau daftar buku yang tersedia
                     case 1:
