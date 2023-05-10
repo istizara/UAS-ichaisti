@@ -83,6 +83,7 @@ int main (){
                 }
                 break;
             
+            //case (3) berfungsi sebagai fitur pada peminjaman, yang akan mengeluarkan pilihan daftar buku dan pinjam buku
             case (3):
                 printf("1. Daftar Buku\n");
                 printf("2. Pinjam Buku\n");
@@ -90,12 +91,14 @@ int main (){
                 system("cls");             
 
                 switch (o){
+                //case (1) berfungsi untuk melihat list atau daftar buku yang tersedia
                     case 1:
                         list (jumlah_buku, i);
                         printf ("\nTekan apapun untuk melanjutkan...");
                         o = 0;
                         getch();
-                        system("cls");    
+                        system("cls");
+               //case (2) berfungsi untuk memilih buku yang akan dipinjam 
                     case 2:
                         printf ("Masukan Nomor buku yang ingin dipinjam : ");
                         scanf ("%d", &p);
@@ -106,8 +109,9 @@ int main (){
                         system("cls");
                         break;
                 }
-                break;       
-
+                break;
+                
+            //case (4) berfungsi untuk mengembalikan buku yang akan dikembalikan
             case (4):
                     printf ("Masukan Nomor buku yang ingin dikembalikan : ");
                     scanf ("%d", &p);
@@ -117,11 +121,12 @@ int main (){
                     getch();
                     system("cls");
                     break;
-
+                    
+            //case (5) berfungsi untuk mengeluarkan program
             case (5):
                 printf("Anda keluar dari program");
                 break;
-            
+            //default berfungsi ketika mengeluarkan input yang salah
             default:
                 printf("Input salah, silahkan dimasukan kembali!");
                 
@@ -129,6 +134,8 @@ int main (){
     }
 }
 
+//mendeklarasikan fungsi input yang menerima dua parameter, yaitu nama yang merupakan pointer ke tipe data Data,
+    dan i yang merupakan pointer ke tipe data int
 void input (Data *nama, int *i){
     printf ("Judul Buku : ");
     scanf (" %[^\n]", nama->judul);
@@ -142,6 +149,7 @@ void input (Data *nama, int *i){
     (*i)++;
 }
 
+// fungsi list menerima dua argumen, yaitu Data *nama dan int i
 void list (Data *nama, int i){
     int y;
     if (i == 0){
@@ -163,7 +171,6 @@ void list (Data *nama, int i){
 
 }
 
-//void cari yang mengambil tiga argumen : nama, i, dan temp
 void cari(Data *nama, int i, Data *temp){
     char keyword[50];
     int j;
