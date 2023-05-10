@@ -170,7 +170,7 @@ void list (Data *nama, int i){
     }   
 
 }
-
+//void cari yang mengambil tiga argumen : nama, i, dan temp
 void cari(Data *nama, int i, Data *temp){
     char keyword[50];
     int j;
@@ -195,6 +195,7 @@ void cari(Data *nama, int i, Data *temp){
     }
 }
 
+//mendeklarasi kan fungsi pinjam dengan empat parameter
 void pinjam (Data *nama, int p, Data *temp, int i){
     if ( i-p < 0){
         printf("\nNomor buku tidak valid");
