@@ -188,3 +188,16 @@ void pinjam (Data *nama, int p, Data *temp, int i){
         nama->status = 0;
     }
 }
+
+void kembali (Data *nama, int p, Data *temp, int i){
+    if ( i-p < 0){
+        printf("\nNomor buku tidak valid");
+    }
+    else if ((temp+p-1)->status == 1){
+        printf("\nBuku masih tersedia");
+    }
+    else {
+        printf ("\nBuku %s telah dikembalikan", (temp+p-1)->judul);
+        nama->status = 1;
+    }
+}
