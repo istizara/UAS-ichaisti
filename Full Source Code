@@ -118,19 +118,6 @@ int main (){
     }
 }
 
-void input (Data *nama, int *i){
-    printf ("Judul Buku : ");
-    scanf (" %[^\n]", nama->judul);
-    printf ("Nama Pengarang : ");
-    scanf (" %[^\n]", nama->pengarang);
-    printf ("Tahun Terbit : ");
-    scanf ("%d", &nama->tahun_terbit);
-    printf ("Penerbit : ");
-    scanf (" %[^\n]", nama->penerbit);
-    nama->status =  1;
-    (*i)++;
-}
-
 void list (Data *nama, int i){
     int y;
     if (i == 0){
