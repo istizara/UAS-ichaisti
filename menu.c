@@ -93,7 +93,17 @@ int main (){
                         break;
                 }
                 break;
-                            
+                 
+                case (4);
+                    printf ("Masukan Nomor buku yang ingin dikembalikan : ");
+                    scanf ("%d", &p);
+                    kembali (&jumlah_buku[p-1], p, temp, i);
+                    temp[p-1] = jumlah_buku[p-1];
+                    printf ("\nTekan apapun untuk melanjutkan...");
+                    getch();
+                    system("cls");
+                    break;
+                
               case (5);
                    printf("Anda keluar dari program");
                    break;
