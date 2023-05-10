@@ -1,9 +1,11 @@
+//header file standar guna melakukan operasi masukan/keluaran pengelolaan string, pengaturan layar, dan penelolaan karakter
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <conio.h>
 #include <ctype.h>
 
+//struct dengan nama Data
 typedef struct {
     char judul[50];
     char pengarang[50];
@@ -12,18 +14,20 @@ typedef struct {
     int status;
 }Data; 
 
-
+//menggunakan void untuk mendeklarasikan beberapa fungsi yang menggunakan parameter  dan tipe data berbeda
 void input (Data *nama, int *i);
 void list (Data *nama, int i);
 void cari (Data *nama, int i, Data *temp);
 void pinjam (Data *nama, int p, Data *temp, int i);
 void kembali (Data *nama, int p, Data *temp, int i);
 
+//awal dari sebuah program, dengan mendeklarasikan dua buah array
 int main (){
     Data jumlah_buku[100], temp[100];
     int m = 0, n, o = 0, p = 0, i = 0;
     system("cls");
-    
+   
+   //while digunakan untuk perulangan yang berjalan selama variabel "m" tidak sama dengan "s"
     while (m != 5){
 
         printf("1. Input Buku\n");
@@ -33,8 +37,10 @@ int main (){
         printf("5. Keluar Program\nMasukan Pilihan : ");
         scanf ("%d", &m);
         system("cls");
-
+        
+        //switch digunakan untuk ekspresi yang akan dievaluasi dan dibangingkan setiap kasus dalam blok switch 
         switch (m) {
+        //case (1) untuk memanggil penginputan data pada buku yang ingin di input
             case (1):
                 input (&jumlah_buku[i], &i);
                 temp[i-1] = jumlah_buku[i-1];
@@ -42,14 +48,17 @@ int main (){
                 getch();
                 system("cls");
                 break;
-
+                
+                //case (2) mengeluarkan pilihan yang ingin digunakan
             case (2):
                 printf("1. Daftar Buku\n");
                 printf("2. Cari Buku\n");
                 scanf ("%d", &o);
                 system("cls");                
-
+                
+                // menggunaka switch untuk alur program yang diinginkan
                 switch (o){
+                //case (1) berfungsi untuk melihat daftar buku yang tersedia
                     case 1:
                         list (jumlah_buku, i);
                         printf ("\nTekan apapun untuk melanjutkan...");
@@ -57,6 +66,7 @@ int main (){
                         getch();
                         system("cls");                
                         break;
+                // case (2) berfungsi untuk mencari buku yang diinginkan
                     case 2:
                         printf ("\tCari buku \n\n");
                         cari (jumlah_buku, i, temp);
@@ -65,7 +75,8 @@ int main (){
                         getch();
                         system("cls");
                         break;
-                    default: 
+                   //default berjalan jika inputan yang di tulis tidak tersedia
+                   default: 
                         printf ("Input salah!");
                         getch();
                         system("cls");
@@ -151,7 +162,8 @@ void list (Data *nama, int i){
     }   
 
 }
-                
+
+//void cari yang mengambil tiga argumen : nama, i, dan temp
 void cari(Data *nama, int i, Data *temp){
     char keyword[50];
     int j;
@@ -189,6 +201,7 @@ void pinjam (Data *nama, int p, Data *temp, int i){
     }
 }
 
+//mendeklarasikan serta mengimplementasikan dari fungsi "kembali" agar keluar dari program
 void kembali (Data *nama, int p, Data *temp, int i){
     if ( i-p < 0){
         printf("\nNomor buku tidak valid");
