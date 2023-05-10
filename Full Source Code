@@ -152,3 +152,27 @@ void list (Data *nama, int i){
 
 }
                 
+void cari(Data *nama, int i, Data *temp){
+    char keyword[50];
+    int j;
+    printf ("Cari berdasarkan Judul buku: ");
+    scanf (" %[^\n]s", keyword);
+
+    system("cls");
+    printf("\tBuku yang ditemukan\n\n");
+    for(int j=0; j<i; j++){
+        char* lowerJudul = strlwr(nama[j].judul);
+        char* lowerKeyword = strlwr(keyword);
+        if(strstr(lowerJudul, lowerKeyword) != NULL){
+            printf ("No Buku = %d", j+1);
+            printf ("\nJudul Buku : %s", (temp+j)->judul);
+            printf ("\nNama Pengarang : %s", nama[j].pengarang);
+            printf ("\nTahun Terbit : %d", nama[j].tahun_terbit);
+            printf ("\nPenerbit : %s", nama[j].penerbit);
+            if (nama[j].status == 1) printf ("\nStatus = 'Tersedia'");
+            else printf ("\nStatus = 'Dipinjamkan'");
+            printf ("\n\n");
+        }
+    }
+}
+
